@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // using System.Collections.Generic;
 // using System.Linq;
 // using LocadoraDeFilmes.Data;
@@ -38,3 +39,10 @@
 
 
 // }
+=======
+namespace LocadoraDeFilmes.Controllers;
+public class UsuarioController
+{
+
+}
+>>>>>>> eb542251734743b08d91266cb8ebcf28c08710e5
