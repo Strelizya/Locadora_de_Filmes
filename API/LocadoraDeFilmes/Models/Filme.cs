@@ -9,6 +9,6 @@ public class Filme
     public int Ano_lanc { get; set; }
     public Boolean Alugado { get; set; }
 
-    public Categoria? categoria { get; set; }
+    public List<Categoria> Categorias { get; set; }
 
 }
