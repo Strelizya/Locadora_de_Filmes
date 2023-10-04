@@ -1,12 +1,12 @@
-using Microsoft.AspNetCore.Mvc;
+// using Microsoft.AspNetCore.Mvc;
 
-namespace LocadoraDeFilmes.Controllers;
+// namespace LocadoraDeFilmes.Controllers;
 
-[ApiController]
-[Route("api/filme")]
-public class FilmeController : ControllerBase
-{
+// [ApiController]
+// [Route("api/filme")]
+// public class FilmeController : ControllerBase
+// {
     
     
 
-}
+// }

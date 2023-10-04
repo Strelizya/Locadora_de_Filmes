@@ -31,10 +31,15 @@ namespace LocadoraDeFilmes.Migrations
                     b.Property<int>("Classif_ind")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("GeneroID")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
                     b.HasKey("FilmeID");
+
+                    b.HasIndex("GeneroID");
 
                     b.ToTable("Filmes");
                 });
@@ -63,11 +68,23 @@ namespace LocadoraDeFilmes.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Cpf");
 
                     b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("LocadoraDeFilmes.Models.Filme", b =>
+                {
+                    b.HasOne("LocadoraDeFilmes.Models.Genero", "Genero")
+                        .WithMany()
+                        .HasForeignKey("GeneroID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Genero");
                 });
 #pragma warning restore 612, 618
         }
