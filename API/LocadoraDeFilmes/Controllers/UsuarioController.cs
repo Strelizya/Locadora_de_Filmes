@@ -123,10 +123,18 @@ public class UsuarioController : ControllerBase
             Usuario? usuarioCadastrado = _ctx.Usuarios.FirstOrDefault(x => x.Cpf == cpf);
             Filme? filmeCadastrado = _ctx.Filmes.FirstOrDefault(x => x.FilmeID == filmeid);
 
+            if(usuarioCadastrado == null){
+                return NotFound("Usuário não encontrado");
+            }
+            if(filmeCadastrado == null){
+                return NotFound("Filme não encontrado");
+            }
             if ((usuarioCadastrado.Idade >= filmeCadastrado.Classif_ind) && filmeCadastrado.Alugado == false)
             {
                 filmeCadastrado.Alugado = true;
-                return Ok($"'{filmeCadastrado.Nome}' Alugado!");
+                _ctx.Filmes.Update(filmeCadastrado);
+                _ctx.SaveChanges();
+                return Ok($"'{filmeCadastrado}' Alugado!");
             }
             return NotFound();
 
@@ -138,5 +146,32 @@ public class UsuarioController : ControllerBase
 
     }
 
+    [HttpGet("devolver/{filmeid}/{cpf}")]
+    public IActionResult Devolver([FromRoute] int filmeid, [FromRoute] int cpf){
+        try
+        {
+            Usuario? usuarioCadastrado = _ctx.Usuarios.FirstOrDefault(x => x.Cpf == cpf);
+            Filme? filmeCadastrado = _ctx.Filmes.FirstOrDefault(x => x.FilmeID == filmeid);
+            if(usuarioCadastrado == null){
+                return NotFound("Usuário não encontrado");
+            }
+            if(filmeCadastrado == null){
+                return NotFound("Filme não encontrado");
+            }
+            if(filmeCadastrado.Alugado == false){
+                return BadRequest("Filme não está sendo alugado");
+            }
+             filmeCadastrado.Alugado = false;
+                _ctx.Filmes.Update(filmeCadastrado);
+                _ctx.SaveChanges();
+                return Ok($"'{filmeCadastrado}' Filme Devolvido!");
+
+        }
+       catch(Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+
+    }
 
 }
