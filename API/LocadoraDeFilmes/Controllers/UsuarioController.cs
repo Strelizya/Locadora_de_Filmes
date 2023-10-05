@@ -50,7 +50,7 @@ public class UsuarioController : ControllerBase
     }    
 
     [HttpGet]
-    [Route("buscar/{Cpf}")]
+    [Route("buscar/{cpf}")]
     public IActionResult Buscar([FromRoute] int cpf)
     {
         try
@@ -71,7 +71,7 @@ public class UsuarioController : ControllerBase
     }
 
     [HttpPut]
-    [Route("alterar/{Cpf}")]
+    [Route("alterar/{cpf}")]
     public IActionResult Alterar([FromRoute] int cpf, [FromBody] Usuario Usuario)
     {
         try
@@ -96,7 +96,7 @@ public class UsuarioController : ControllerBase
 
 
     [HttpDelete]
-    [Route("deletar/{Cpf}")]
+    [Route("deletar/{cpf}")]
     public IActionResult Deletar([FromRoute] int cpf){
         try
         {
