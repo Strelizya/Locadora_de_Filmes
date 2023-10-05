@@ -115,6 +115,28 @@ public class UsuarioController : ControllerBase
         }
     }
 
+    [HttpGet("alugar/{filmeid}/{cpf}")]
+    public IActionResult Alugar([FromRoute] int filmeid, [FromRoute] int cpf)
+    {
+        try
+        {
+            Usuario? usuarioCadastrado = _ctx.Usuarios.FirstOrDefault(x => x.Cpf == cpf);
+            Filme? filmeCadastrado = _ctx.Filmes.FirstOrDefault(x => x.FilmeID == filmeid);
+
+            if ((usuarioCadastrado.Idade >= filmeCadastrado.Classif_ind) && filmeCadastrado.Alugado == false)
+            {
+                filmeCadastrado.Alugado = true;
+                return Ok($"'{filmeCadastrado.Nome}' Alugado!");
+            }
+            return NotFound();
+
+        }
+        catch(Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+
+    }
 
 
 }

@@ -144,7 +144,7 @@ public class GeneroController : ControllerBase
     // --------------------
 
     [HttpDelete]
-    [Route("deletar/{id}")]
+    [Route("deletar/{id}")] 
     public IActionResult Deletar([FromRoute] int id)
     {
         try
