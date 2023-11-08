@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CadastrarProdutoComponent } from './src/app/pages/produto/cadastrar-produto/cadastrar-produto.component';
-import { ListarProdutoComponent } from './pages/produto/listar-produto/listar-produto.component';
 import { ListarFilmeComponent } from './pages/filme/listar-filme/listar-filme.component';
 import { CadastrarFilmeComponent } from './pages/filme/cadastrar-filme/cadastrar-filme.component';
 import { CadastrarUsuarioComponent } from './pages/usuario/cadastrar-usuario/cadastrar-usuario.component';
@@ -15,8 +15,6 @@ import { CadastrarGeneroComponent } from './pages/genero/cadastrar-genero/cadast
 @NgModule({
   declarations: [
     AppComponent,
-    CadastrarProdutoComponent,
-    ListarProdutoComponent,
     ListarFilmeComponent,
     CadastrarFilmeComponent,
     CadastrarUsuarioComponent,
@@ -26,7 +24,8 @@ import { CadastrarGeneroComponent } from './pages/genero/cadastrar-genero/cadast
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

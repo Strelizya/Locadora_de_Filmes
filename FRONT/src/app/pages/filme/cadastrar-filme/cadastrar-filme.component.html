@@ -1,1 +1,29 @@
-<p>cadastrar-filme works!</p>
+<h1>Cadastrar Filme</h1>
+
+<div>
+  <label>Nome:</label>
+  <input type="text" [(ngModel)]="nome" />
+</div>
+
+<div>
+  <label>Classificação Indicativa:</label>
+  <input type="text" [(ngModel)]="classif_ind" />
+</div>
+
+<div>
+  <label>Ano de Lançamento:</label>
+  <input type="text" [(ngModel)]="ano_lanc" />
+</div>
+
+<div>
+  <label>Generos:</label>
+  <select [(ngModel)]="generoID">
+    <option *ngFor="let g of generos" value="{{ g.GeneroID }}">
+      {{ g.GeneroNome }}
+    </option>
+  </select>
+</div>
+
+<div>
+  <button (click)="cadastrar()">Cadastrar Produto</button>
+</div>
