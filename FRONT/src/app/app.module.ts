@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,7 @@ import { CadastrarUsuarioComponent } from './pages/usuario/cadastrar-usuario/cad
 import { ListarUsuarioComponent } from './pages/usuario/listar-usuario/listar-usuario.component';
 import { ListarGeneroComponent } from './pages/genero/listar-genero/listar-genero.component';
 import { CadastrarGeneroComponent } from './pages/genero/cadastrar-genero/cadastrar-genero.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CadastrarGeneroComponent } from './pages/genero/cadastrar-genero/cadast
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],

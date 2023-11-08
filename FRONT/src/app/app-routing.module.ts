@@ -9,7 +9,7 @@ const routes: Routes = [
     //"path" define a rota
     path: "",
     //"componet" define qual component vai ser aberto naquela rota
-    component: CadastrarFilmeComponent
+    component: ListarFilmeComponent
   },
   {
     path: "pages/filme/listar",

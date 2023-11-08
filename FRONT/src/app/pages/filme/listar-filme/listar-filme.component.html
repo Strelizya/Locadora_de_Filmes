@@ -1,1 +1,20 @@
-<p>listar-filme works!</p>
+<h1>Listagem de produtos</h1>
+
+<table id="table">
+  <tr>
+    <th>#</th>
+    <th>Nome</th>
+    <th>Classificação Indicativa</th>
+    <th>Ano de Lançamento</th>
+    <th>Alugado</th>
+    <th>Genero</th>
+  </tr>
+  <tr *ngFor="let p of filmes">
+    <td>{{ p.FilmeID }}</td>
+    <td>{{ p.Nome }}</td>
+    <td>{{ p.Classif_ind }}</td>
+    <td>{{ p.Ano_lanc }}</td>
+    <td>{{ p.Alugado }}</td>
+    <td>{{ p.Genero?.GeneroNome }}</td>
+  </tr>
+</table>
