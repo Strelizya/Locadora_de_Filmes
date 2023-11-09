@@ -1,4 +1,4 @@
 export interface Genero{
-    GeneroID: number;
-    GeneroNome?: string;
+    generoID?: number;
+    generoNome: string;
 }

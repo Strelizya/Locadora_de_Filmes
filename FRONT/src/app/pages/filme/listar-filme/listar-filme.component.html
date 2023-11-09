@@ -10,11 +10,11 @@
     <th>Genero</th>
   </tr>
   <tr *ngFor="let p of filmes">
-    <td>{{ p.FilmeID }}</td>
-    <td>{{ p.Nome }}</td>
-    <td>{{ p.Classif_ind }}</td>
-    <td>{{ p.Ano_lanc }}</td>
-    <td>{{ p.Alugado }}</td>
-    <td>{{ p.Genero?.GeneroNome }}</td>
+    <td>{{ p.filmeID }}</td>
+    <td>{{ p.nome }}</td>
+    <td>{{ p.classif_ind }}</td>
+    <td>{{ p.ano_lanc }}</td>
+    <td>{{ p.alugado }}</td>
+    <td>{{ p.genero?.generoNome }}</td>
   </tr>
 </table>

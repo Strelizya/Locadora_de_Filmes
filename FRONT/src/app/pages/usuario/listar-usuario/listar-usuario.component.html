@@ -1,1 +1,22 @@
-<p>listar-usuario works!</p>
+<h1> Lista de Usuarios </h1>
+
+<table id="table">
+
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Idade
+        </th>
+    </tr>
+    <tr *ngFor="let u of usuarios">
+        <td>
+            {{ u.nome }}
+        </td>
+        <td>
+            {{ u.idade }}
+        </td>
+    </tr>
+
+</table>

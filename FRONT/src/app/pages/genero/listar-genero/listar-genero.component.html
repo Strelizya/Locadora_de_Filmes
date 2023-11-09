@@ -1,1 +1,14 @@
-<p>listar-genero works!</p>
+<h1>Listagem de Generos</h1>
+
+<table id="table">
+    <tr>
+        <th>
+            Generos
+        </th>
+    </tr>
+    <tr *ngFor="let g of generos">
+        <td>
+            {{ g.generoNome }}
+        </td>
+    </tr>
+</table>

@@ -46,11 +46,11 @@ export class CadastrarFilmeComponent {
   //Para fazer o cadastrar, eu passo um objeto do tipo "Filme", com os dados necessarios
   cadastrar(): void{
     let filme: Filme ={
-      Nome: this.nome,
-      Classif_ind: Number.parseInt(this.classif_ind),
-      Ano_lanc: Number.parseInt(this.ano_lanc),
-      Alugado: this.alugado,
-      GeneroID: this.generoID
+      nome: this.nome,
+      classif_ind: Number.parseInt(this.classif_ind),
+      ano_lanc: Number.parseInt(this.ano_lanc),
+      alugado: this.alugado,
+      generoID: this.generoID
     }; 
 
     //Fazendo a requisição de cadastro para a "API"
