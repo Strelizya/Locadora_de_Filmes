@@ -25,6 +25,10 @@ public class GeneroController : ControllerBase
     [Route("cadastrar")]
     public IActionResult Cadastrar([FromBody] Genero genero)
     {
+        var generoExistente = _ctx.Generos.FirstOrDefault(x => x.GeneroNome == genero.GeneroNome);
+        if(generoExistente == null){
+            return BadRequest("Gênero já está cadastrado");
+        }
         try
         {
             _ctx.Generos.Add(genero);

@@ -23,7 +23,10 @@ public class FilmeController : ControllerBase
     [HttpPost("cadastrar")]
     public IActionResult Cadastrar([FromBody] Filme filme)
     {
-
+        var filmeExistente = _ctx.Filmes.FirstOrDefault(x => x.Nome == filme.Nome);
+        if(filmeExistente == null){
+            return BadRequest("Filme já está cadastrado");
+        }
         try{
             _ctx.Filmes.Add(filme);
             _ctx.SaveChanges();

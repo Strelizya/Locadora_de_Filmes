@@ -18,7 +18,13 @@ public class UsuarioController : ControllerBase
     [Route("cadastrar")]
     public ActionResult Cadastrar([FromBody] Usuario usuario)
     {
+        //Verifica pelo cpf se o usuario ja esta cadastrado
+        var usuarioExistente = _ctx.Usuarios.FirstOrDefault(x => x.Cpf == usuario.Cpf);
+        if(usuarioExistente == null){
+            return BadRequest("Usuário já está cadastrado");
+        }
         try
+        //
         {
             _ctx.Usuarios.Add(usuario);
             _ctx.SaveChanges();

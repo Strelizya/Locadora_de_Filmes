@@ -1,0 +1,18 @@
+POST https://localhost:7035/api/filme/cadastrar
+Content-Type: application/json
+
+{ 
+  "filmeID": ,
+  "nome": "Jogos Vorazes",
+  "classif_ind": 0,
+  "ano_lanc": 2023,
+  "alugado": true,
+  "genero": {
+    "generoID": 1,
+    "generoNome": ""
+  },
+  "generoID": 0
+
+}
+### listar todos os Usuarios
+GET https://localhost:7035/api/filme/listar
