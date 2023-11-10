@@ -20,7 +20,7 @@ public class UsuarioController : ControllerBase
     {
         //Verifica pelo cpf se o usuario ja esta cadastrado
         var usuarioExistente = _ctx.Usuarios.FirstOrDefault(x => x.Cpf == usuario.Cpf);
-        if(usuarioExistente == null){
+        if(usuarioExistente != null){
             return BadRequest("Usuário já está cadastrado");
         }
         try

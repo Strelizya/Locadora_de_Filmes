@@ -24,7 +24,7 @@ public class FilmeController : ControllerBase
     public IActionResult Cadastrar([FromBody] Filme filme)
     {
         var filmeExistente = _ctx.Filmes.FirstOrDefault(x => x.Nome == filme.Nome);
-        if(filmeExistente == null){
+        if(filmeExistente != null){
             return BadRequest("Filme já está cadastrado");
         }
         try{
