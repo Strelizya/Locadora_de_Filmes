@@ -1,0 +1,26 @@
+<h1>Lista de Filmes</h1>
+
+<table id="table">
+  <tr>
+    <th>#</th>
+    <th>Nome</th>
+    <th>Classificação Indicativa</th>
+    <th>Ano de Lançamento</th>
+    <th>Alugado</th>
+    <th>Genero</th>
+  </tr>
+  <tr *ngFor="let f of filmes">
+    <td>{{ f.filmeID }}</td>
+    <td>{{ f.nome }}</td>
+    <td>{{ f.classif_ind }}</td>
+    <td>{{ f.ano_lanc }}</td>
+    <td>{{ f.alugado? 'Alugado' : 'Disponível' }}</td>
+    <td>{{ f.genero?.generoNome }}</td>
+
+    <button (click)="deletar(f.filmeID)"> Deletar </button>
+
+    <a routerLink="/pages/filme/alterar/{{f.filmeID}}">
+      <button> Alterar </button>
+  </a>
+  </tr>
+</table>

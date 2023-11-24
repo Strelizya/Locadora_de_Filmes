@@ -14,6 +14,8 @@ import { CadastrarGeneroComponent } from './pages/genero/cadastrar-genero/cadast
 import { AlterarFilmeComponent } from './pages/filme/alterar-filme/alterar-filme.component';
 import { AlterarUsuarioComponent } from './pages/usuario/alterar-usuario/alterar-usuario.component';
 import { AlterarGeneroComponent } from './pages/genero/alterar-genero/alterar-genero.component';
+import { AlugadosFilmeComponent } from './pages/filme/alugados-filme/alugados-filme.component';
+import { DisponiveisFilmeComponent } from './pages/filme/disponiveis-filme/disponiveis-filme.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { AlterarGeneroComponent } from './pages/genero/alterar-genero/alterar-ge
     AlterarUsuarioComponent,
     ListarGeneroComponent,
     CadastrarGeneroComponent,
-    AlterarGeneroComponent
+    AlterarGeneroComponent,
+    AlugadosFilmeComponent,
+    DisponiveisFilmeComponent
   ],
   imports: [
     BrowserModule,

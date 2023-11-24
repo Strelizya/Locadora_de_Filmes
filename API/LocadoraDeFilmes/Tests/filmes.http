@@ -3,10 +3,10 @@ Content-Type: application/json
 
 { 
   "filmeID": ,
-  "nome": "Jogos Vorazes",
+  "nome": " Vorazes",
   "classif_ind": 0,
   "ano_lanc": 2023,
-  "alugado": true,
+  "alugado": false,
   "genero": {
     "generoID": 1,
     "generoNome": ""
@@ -16,3 +16,9 @@ Content-Type: application/json
 }
 ### listar todos os Usuarios
 GET https://localhost:7035/api/filme/listar
+
+### lista de filmes alugados
+GET https://localhost:7035/api/filme/listarAlugados
+
+### lista de filmes disponiveis
+GET https://localhost:7035/api/filme/listardisponiveis

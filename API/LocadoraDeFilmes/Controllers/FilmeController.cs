@@ -150,4 +150,38 @@ public class FilmeController : ControllerBase
     //Fim método
     //
 
+    [HttpGet("listarAlugados")]
+    public IActionResult Alugados()
+    {
+        try
+        {
+
+            var filmesAlugado = _ctx.Filmes.Where(filme => filme.Alugado == true).ToList();
+
+            return filmesAlugado.Count == 0? NotFound("Nenhum Filme Alugado Encontrado.") : Ok(filmesAlugado);
+
+        }
+        catch(Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+
+    [HttpGet("listarDisponiveis")]
+    public IActionResult Disponiveis()
+    {
+        try
+        {
+
+            var filmesAlugado = _ctx.Filmes.Where(filme => filme.Alugado == false).ToList();
+
+            return filmesAlugado.Count == 0? NotFound("Nenhum Filme Alugado Encontrado.") : Ok(filmesAlugado);
+
+        }
+        catch(Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+
 }

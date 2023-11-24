@@ -9,6 +9,8 @@ import { CadastrarUsuarioComponent } from './pages/usuario/cadastrar-usuario/cad
 import { AlterarFilmeComponent } from './pages/filme/alterar-filme/alterar-filme.component';
 import { AlterarGeneroComponent } from './pages/genero/alterar-genero/alterar-genero.component';
 import { AlterarUsuarioComponent } from './pages/usuario/alterar-usuario/alterar-usuario.component';
+import { AlugadosFilmeComponent } from './pages/filme/alugados-filme/alugados-filme.component';
+import { DisponiveisFilmeComponent } from './pages/filme/disponiveis-filme/disponiveis-filme.component';
 
 //Definindo as rotas da aplicação
 const routes: Routes = [
@@ -30,6 +32,14 @@ const routes: Routes = [
   {
     path: "pages/filme/alterar/:filmeID",
     component: AlterarFilmeComponent
+  },
+  {
+    path: "pages/filme/alugados",
+    component: AlugadosFilmeComponent
+  },
+  {
+    path: "pages/filme/disponiveis",
+    component: DisponiveisFilmeComponent
   },
   //Rotas do GENERO
   {
