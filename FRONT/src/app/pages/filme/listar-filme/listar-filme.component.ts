@@ -9,6 +9,8 @@ import { Filme } from 'src/app/models/filme.model';
 })
 export class ListarFilmeComponent {
 
+  alugado: string = "alugado"
+  disponivel: string = "disponivel"
   filmes: Filme[] = [];
 
   constructor(private client: HttpClient){
@@ -26,6 +28,20 @@ export class ListarFilmeComponent {
           console.log(erro);
         }
       });
+  }
+
+  deletar(filmeID: number){
+    this.client.delete<Filme[]>
+      (`https://localhost:7035/api/filme/deletar/${filmeID}`)
+      .subscribe({
+        next: (filmes) =>{
+          this.filmes = filmes;         
+          console.log("Filme deletado com sucesso") 
+        },
+        error: (erro) => {
+          console.log(erro);
+        }
+      })
   }
 
 }

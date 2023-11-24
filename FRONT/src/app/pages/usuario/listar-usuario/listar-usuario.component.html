@@ -17,6 +17,12 @@
         <td>
             {{ u.idade }}
         </td>
+        
+        <button (click)="deletar(u.cpf)"> Deletar </button>
+
+        <a routerLink="/pages/usuario/alterar/{{u.cpf}}">
+            <button> Alterar </button>
+        </a>
     </tr>
 
 </table>

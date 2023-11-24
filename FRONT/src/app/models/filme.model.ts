@@ -1,7 +1,7 @@
 import { Genero } from "./genero.model";
 
 export interface Filme{
-    filmeID?: number;
+    filmeID: number;
     nome: string;
     classif_ind: number;
     ano_lanc: number;

@@ -1,4 +1,4 @@
-<h1>Listagem de Generos</h1>
+<h1>Lista de Generos</h1>
 
 <table id="table">
     <tr>
@@ -10,5 +10,11 @@
         <td>
             {{ g.generoNome }}
         </td>
+
+        <button (click)="deletar(g.generoID)"> Deletar </button>
+
+        <a routerLink="/pages/genero/alterar/{{g.generoID}}">
+            <button> Alterar </button>
+        </a>
     </tr>
 </table>

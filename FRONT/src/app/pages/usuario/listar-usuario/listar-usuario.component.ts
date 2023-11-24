@@ -8,7 +8,7 @@ import { Usuario } from 'src/app/models/usuario.model';
   styleUrls: ['./listar-usuario.component.css']
 })
 export class ListarUsuarioComponent {
-  usuarios: Usuario[] = [];
+  usuarios: Usuario[] = [];  
 
   constructor(private client: HttpClient){
   }
@@ -26,4 +26,17 @@ export class ListarUsuarioComponent {
       });
   }
 
+  deletar(cpf: number){
+    this.client.delete<Usuario[]>
+      (`https://localhost:7035/api/usuario/deletar/${cpf}`)
+      .subscribe({
+        next: (usuarios) =>{
+          this.usuarios = usuarios; 
+          console.log("Usuario deletado com sucesso")         
+        },
+        error: (erro) => {
+          console.log(erro);
+        }
+      })
+  }
 }

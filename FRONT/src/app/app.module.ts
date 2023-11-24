@@ -11,6 +11,9 @@ import { CadastrarUsuarioComponent } from './pages/usuario/cadastrar-usuario/cad
 import { ListarUsuarioComponent } from './pages/usuario/listar-usuario/listar-usuario.component';
 import { ListarGeneroComponent } from './pages/genero/listar-genero/listar-genero.component';
 import { CadastrarGeneroComponent } from './pages/genero/cadastrar-genero/cadastrar-genero.component';
+import { AlterarFilmeComponent } from './pages/filme/alterar-filme/alterar-filme.component';
+import { AlterarUsuarioComponent } from './pages/usuario/alterar-usuario/alterar-usuario.component';
+import { AlterarGeneroComponent } from './pages/genero/alterar-genero/alterar-genero.component';
 
 
 @NgModule({
@@ -18,10 +21,13 @@ import { CadastrarGeneroComponent } from './pages/genero/cadastrar-genero/cadast
     AppComponent,
     ListarFilmeComponent,
     CadastrarFilmeComponent,
+    AlterarFilmeComponent,
     CadastrarUsuarioComponent,
     ListarUsuarioComponent,
+    AlterarUsuarioComponent,
     ListarGeneroComponent,
-    CadastrarGeneroComponent
+    CadastrarGeneroComponent,
+    AlterarGeneroComponent
   ],
   imports: [
     BrowserModule,

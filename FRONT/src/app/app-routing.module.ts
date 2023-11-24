@@ -6,6 +6,9 @@ import { CadastrarGeneroComponent } from './pages/genero/cadastrar-genero/cadast
 import { ListarGeneroComponent } from './pages/genero/listar-genero/listar-genero.component';
 import { ListarUsuarioComponent } from './pages/usuario/listar-usuario/listar-usuario.component';
 import { CadastrarUsuarioComponent } from './pages/usuario/cadastrar-usuario/cadastrar-usuario.component';
+import { AlterarFilmeComponent } from './pages/filme/alterar-filme/alterar-filme.component';
+import { AlterarGeneroComponent } from './pages/genero/alterar-genero/alterar-genero.component';
+import { AlterarUsuarioComponent } from './pages/usuario/alterar-usuario/alterar-usuario.component';
 
 //Definindo as rotas da aplicação
 const routes: Routes = [
@@ -24,6 +27,10 @@ const routes: Routes = [
     path: "pages/filme/cadastrar",
     component: CadastrarFilmeComponent
   },
+  {
+    path: "pages/filme/alterar/:filmeID",
+    component: AlterarFilmeComponent
+  },
   //Rotas do GENERO
   {
     path: "pages/genero/listar",
@@ -33,6 +40,10 @@ const routes: Routes = [
     path: "pages/genero/cadastrar",
     component: CadastrarGeneroComponent
   },
+  {
+    path: "pages/genero/alterar/:generoID",
+    component: AlterarGeneroComponent
+  },
   //Rotas do USUARIO
   {
     path: "pages/usuario/listar",
@@ -41,6 +52,10 @@ const routes: Routes = [
   {
     path: "pages/usuario/cadastrar",
     component: CadastrarUsuarioComponent
+  },
+  {
+    path: "pages/usuario/alterar/:cpf",
+    component: AlterarUsuarioComponent
   }
 
 ];

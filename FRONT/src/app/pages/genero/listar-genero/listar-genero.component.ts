@@ -30,4 +30,18 @@ export class ListarGeneroComponent {
     })
   }
 
+  deletar(generoID: number){
+    this.client.delete<Genero[]>
+      (`https://localhost:7035/api/genero/deletar/${generoID}`)
+      .subscribe({
+        next: (generos) =>{
+          this.generos = generos;   
+          console.log("Genero deletado com sucesso")       
+        },
+        error: (erro) => {
+          console.log(erro);
+        }
+      })
+  }
+
 }
