@@ -11,6 +11,7 @@ import { AlterarGeneroComponent } from './pages/genero/alterar-genero/alterar-ge
 import { AlterarUsuarioComponent } from './pages/usuario/alterar-usuario/alterar-usuario.component';
 import { AlugadosFilmeComponent } from './pages/filme/alugados-filme/alugados-filme.component';
 import { DisponiveisFilmeComponent } from './pages/filme/disponiveis-filme/disponiveis-filme.component';
+import { AlugarFilmeComponent } from './pages/filme/alugar-filme/alugar-filme.component';
 
 //Definindo as rotas da aplicação
 const routes: Routes = [
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: "pages/filme/disponiveis",
     component: DisponiveisFilmeComponent
+  },
+  {
+    path: "pages/filme/alugar/:filmeID",
+    component: AlugarFilmeComponent
   },
   //Rotas do GENERO
   {

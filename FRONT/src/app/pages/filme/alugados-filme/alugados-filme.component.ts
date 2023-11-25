@@ -38,4 +38,26 @@ export class AlugadosFilmeComponent {
         }
       })
   }
+
+  devolver(filmeID: number): void {
+    this.client.get(`https://localhost:7035/api/usuario/devolver/${filmeID}`)
+      .subscribe({
+        next: (response) => {
+          console.log(response); // Exibe a resposta da API no console
+          // Atualize a lista de filmes após a devolução (se necessário)
+          this.client.get<Filme[]>("https://localhost:7035/api/filme/listarAlugados")
+            .subscribe({
+              next: (filmes) => {
+                this.filmes = filmes;
+              },
+              error: (erro) => {
+                console.log(erro);
+              }
+            });
+        },
+        error: (erro) => {
+          console.log(erro);
+        }
+      });
+  }
 }

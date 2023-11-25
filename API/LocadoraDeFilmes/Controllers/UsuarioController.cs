@@ -152,15 +152,12 @@ public class UsuarioController : ControllerBase
 
     }
 
-    [HttpGet("devolver/{filmeid}/{cpf}")]
-    public IActionResult Devolver([FromRoute] int filmeid, [FromRoute] int cpf){
+    [HttpGet("devolver/{filmeid}")]
+    public IActionResult Devolver([FromRoute] int filmeid){
         try
         {
-            Usuario? usuarioCadastrado = _ctx.Usuarios.FirstOrDefault(x => x.Cpf == cpf);
             Filme? filmeCadastrado = _ctx.Filmes.FirstOrDefault(x => x.FilmeID == filmeid);
-            if(usuarioCadastrado == null){
-                return NotFound("Usuário não encontrado");
-            }
+            
             if(filmeCadastrado == null){
                 return NotFound("Filme não encontrado");
             }

@@ -1,0 +1,7 @@
+<h1>Alugar Filme</h1>
+
+<div *ngIf="filme">
+  <p>Filme Selecionado: {{ filme.nome }}</p>
+  <p>CPF do Usuário: <input type="number" [(ngModel)]="cpf" /></p>
+  <button (click)="alugar()"> Alugar Filme </button>
+</div>

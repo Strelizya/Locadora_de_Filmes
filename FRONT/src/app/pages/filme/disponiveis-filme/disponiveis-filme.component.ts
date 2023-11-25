@@ -1,6 +1,8 @@
 import { HttpBackend, HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Filme } from 'src/app/models/filme.model';
+import { Usuario } from 'src/app/models/usuario.model';
 
 @Component({
   selector: 'app-disponiveis-filme',
@@ -10,7 +12,8 @@ import { Filme } from 'src/app/models/filme.model';
 export class DisponiveisFilmeComponent {
   filmes: Filme[] = []
   
-  constructor(private client: HttpClient){}
+  constructor(private client: HttpClient,
+    private router: Router){}
 
   ngOnInit(): void{
     this.client.get<Filme[]>
