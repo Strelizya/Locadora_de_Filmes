@@ -11,6 +11,8 @@ import { Usuario } from 'src/app/models/usuario.model';
 })
 export class DisponiveisFilmeComponent {
   filmes: Filme[] = []
+  displayedColumns: string[] = ['filmeID','nome','classif_ind','ano_lanc','alugado','generoNome','alugar','deletar','alterar'];
+
   
   constructor(private client: HttpClient,
     private router: Router){}

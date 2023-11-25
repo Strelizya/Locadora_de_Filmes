@@ -1,20 +1,27 @@
-<h1>Lista de Generos</h1>
+<h1>Lista de Gêneros</h1>
 
-<table id="table">
-    <tr>
-        <th>
-            Generos
-        </th>
-    </tr>
-    <tr *ngFor="let g of generos">
-        <td>
-            {{ g.generoNome }}
-        </td>
+<table mat-table [dataSource]="generos" class="tabela">
 
-        <button (click)="deletar(g.generoID)"> Deletar </button>
+  <ng-container matColumnDef="generoNome">
+    <th mat-header-cell *matHeaderCellDef> Gêneros </th>
+    <td mat-cell *matCellDef="let genero"> {{genero.generoNome}} </td>
+  </ng-container>
 
-        <a routerLink="/pages/genero/alterar/{{g.generoID}}">
-            <button> Alterar </button>
-        </a>
-    </tr>
+  <ng-container matColumnDef="deletar">
+    <th mat-header-cell *matHeaderCellDef> Apagar</th>
+    <td mat-cell *matCellDef="let genero">
+      <a mat-button (click)="deletar(genero.generoID)" class="deletar">Deletar</a>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="alterar">
+    <th mat-header-cell *matHeaderCellDef> Alterar</th>
+    <td mat-cell *matCellDef="let genero">
+      <a mat-button routerLink="/pages/genero/alterar/{{genero.generoID}}" class="alterar">Editar</a>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
 </table>

@@ -9,6 +9,7 @@ import { Usuario } from 'src/app/models/usuario.model';
 })
 export class ListarUsuarioComponent {
   usuarios: Usuario[] = [];  
+  displayedColumns: string[] = ['nome', 'idade', 'deletar', 'alterar'];
 
   constructor(private client: HttpClient){
   }

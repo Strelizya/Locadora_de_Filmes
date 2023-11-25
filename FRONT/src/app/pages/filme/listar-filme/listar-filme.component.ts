@@ -12,6 +12,7 @@ export class ListarFilmeComponent {
   alugado: string = "alugado"
   disponivel: string = "disponivel"
   filmes: Filme[] = [];
+  displayedColumns: string[] = ['filmeID','nome','classif_ind','ano_lanc','alugado','genero','deletar','alterar'    ];
 
   constructor(private client: HttpClient){
   }

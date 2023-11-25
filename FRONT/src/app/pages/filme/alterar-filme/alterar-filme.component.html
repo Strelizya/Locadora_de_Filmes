@@ -1,34 +1,39 @@
-<h1>Alterar Filme</h1>
+<div class="centralizar">
+  <div class="principal">
+    <h1>Alterar Filme</h1>
 
-<div>
-  <label>Nome:</label>
-  <input type="text" [(ngModel)]="nome" />
-</div>
+    <mat-form-field>
+      <mat-label>Nome:</mat-label>
+      <input matInput type="text" [(ngModel)]="nome" />
+    </mat-form-field>
 
-<div>
-  <label>Classificação Indicativa:</label>
-  <input type="text" [(ngModel)]="classif_ind" />
-</div>
+    <br>
 
-<div>
-  <label>Ano de Lançamento:</label>
-  <input type="text" [(ngModel)]="ano_lanc" />
-</div>
+    <mat-form-field>
+      <mat-label>Classificação Indicativa:</mat-label>
+      <input matInput type="text" [(ngModel)]="classif_ind" />
+    </mat-form-field>
 
-<!-- <div>
-  <label>Genero:</label>
-  <input type="text" [(ngModel)]="generoID" />
-</div> -->
+    <br>
 
-<div>
-  <label>Generos:</label>
-  <select [(ngModel)]="generoID">
-    <option *ngFor="let g of generos" value="{{ g.generoID }}">
-      {{ g.generoNome }}
-    </option>
-  </select>
-</div>
+    <mat-form-field>
+      <mat-label>Ano de Lançamento:</mat-label>
+      <input matInput type="number" [(ngModel)]="ano_lanc" />
+    </mat-form-field>
 
-<div>
-  <button (click)="alterar()">Alterar</button>
+    <br>
+
+    <mat-form-field>
+      <mat-label>Gênero:</mat-label>
+      <mat-select [(ngModel)]="generoID">
+        <mat-option *ngFor="let genero of generos" value="{{ genero.generoID }}">
+          {{ genero.generoNome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div>
+      <button mat-raised-button (click)="alterar()">Alterar</button>
+    </div>
+  </div>
 </div>

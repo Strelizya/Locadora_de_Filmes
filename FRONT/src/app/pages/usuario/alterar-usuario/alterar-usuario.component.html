@@ -1,15 +1,18 @@
-<h1>  Aterar Usuario </h1>
+<div class="centralizar">
+    <div class="principal">
+        <h1>Alterar Usuário</h1>
 
-<div>
-    <label> Nome: </label>
-    <input type="text" [(ngModel)]="nome">
-</div>
-
-<div>
-    <label> Idade: </label>
-    <input type="text" [(ngModel)]="idade">
-</div>
-
-<div>
-    <button (click)="alterar()"> Alterar </button>
+        <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input matInput type="text" [(ngModel)]="nome">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Idade</mat-label>
+            <input matInput type="text" [(ngModel)]="idade">
+        </mat-form-field>
+        <div>
+            <button mat-raised-button (click)="alterar()">Alterar</button>
+        </div>
+    </div>
 </div>

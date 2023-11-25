@@ -11,6 +11,7 @@ export class ListarGeneroComponent {
   
   //array de "generos"
   generos : Genero[] = []
+  displayedColumns: string[] = ['generoNome', 'deletar', 'alterar'];
 
   constructor(private client: HttpClient){
   }
