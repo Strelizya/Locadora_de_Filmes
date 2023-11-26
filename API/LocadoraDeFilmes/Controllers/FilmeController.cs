@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using LocadoraDeFilmes.Data;
 using LocadoraDeFilmes.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LocadoraDeFilmes.Controllers;
 
@@ -23,15 +24,27 @@ public class FilmeController : ControllerBase
     [HttpPost("cadastrar")]
     public IActionResult Cadastrar([FromBody] Filme filme)
     {
-        var filmeExistente = _ctx.Filmes.FirstOrDefault(x => x.Nome == filme.Nome);
-        if(filmeExistente != null){
-            return BadRequest("Filme já está cadastrado");
-        }
         try{
-            _ctx.Filmes.Add(filme);
+            var filmeExistente = _ctx.Filmes.FirstOrDefault(x => x.Nome == filme.Nome);
+            if(filmeExistente != null){
+                return BadRequest("Filme já está cadastrado");
+            }
+            Genero? genero = _ctx.Generos.Find(filme.GeneroID);
+            if(genero == null){
+                return NotFound();
+            }
+            Filme NovoFilme = new Filme
+            {
+                Nome = filme.Nome,
+                Classif_ind = filme.Classif_ind,
+                Ano_lanc = filme.Ano_lanc,
+                Genero = genero,
+                GeneroID = filme.GeneroID
+            };
+            _ctx.Filmes.Add(NovoFilme);
             _ctx.SaveChanges();
 
-            return Created("", filme);
+            return Created("", NovoFilme);
         }
         catch(Exception e)
         {
@@ -50,7 +63,7 @@ public class FilmeController : ControllerBase
         try
         {
 
-            var filmes = _ctx.Filmes.ToList();
+            List<Filme> filmes = _ctx.Filmes.Include(x => x.Genero).ToList();
 
             return filmes.Count == 0? NotFound("Nenhum Filme Encontrado.") : Ok(filmes);
 
@@ -137,7 +150,7 @@ public class FilmeController : ControllerBase
                 _ctx.Filmes.Remove(filmeCadastrado);
                 _ctx.SaveChanges();
                 
-                return Ok($"Filme com o ID '{id}' foi Deletado");
+                return Ok(_ctx.Filmes.Include(x=>x.Genero).ToList());
             }
             return NotFound("Nenhum Filme Encontrado.");
 
