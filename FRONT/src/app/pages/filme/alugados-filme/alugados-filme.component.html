@@ -27,10 +27,16 @@
     <td mat-cell *matCellDef="let filme"> {{filme.alugado? 'Alugado' : 'Disponível'}} </td>
   </ng-container>
 
+  <!--
+
   <ng-container matColumnDef="genero">
     <th mat-header-cell *matHeaderCellDef> Gênero </th>
     <td mat-cell *matCellDef="let filme"> {{filme.genero?.generoNome}} </td>
   </ng-container>
+
+  -->
+
+
 
   <ng-container matColumnDef="devolver">
     <th mat-header-cell *matHeaderCellDef> Devolver </th>

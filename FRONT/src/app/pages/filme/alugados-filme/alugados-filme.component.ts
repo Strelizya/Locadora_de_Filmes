@@ -9,7 +9,7 @@ import { Filme } from 'src/app/models/filme.model';
 })
 export class AlugadosFilmeComponent {
   filmes: Filme[] = []
-  displayedColumns: string[] = ['filmeID','nome','classifIndicativa','anoLancamento','alugado','genero','devolver','deletar','alterar'];
+  displayedColumns: string[] = ['filmeID','nome','classifIndicativa','anoLancamento','alugado',/*'genero',*/'devolver','deletar','alterar'];
   
   constructor(private client: HttpClient){}
 
